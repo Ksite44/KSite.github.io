@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSite — Nowoczesne Strony Internetowe</title>
+    
+    <!-- Tailwind CSS (niezawodna wersja) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Własne style i animacje -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Ikony -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Logika strony -->
+    <script defer src="script.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-50 font-sans selection:bg-indigo-500/30 antialiased overflow-x-hidden min-h-screen flex flex-col">
+
+    <!-- NAWIGACJA -->
+    <nav id="main-nav" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <a href="#" data-route="page-home" class="flex items-center gap-2 group">
+                    <span class="font-mono font-bold text-xl bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent group-hover:from-violet-400 group-hover:to-indigo-400 transition-all">
+                        &lt;/&gt;
+                    </span>
+                    <span class="font-bold text-lg text-white tracking-tight group-hover:text-indigo-400 transition-colors">
+                        KSite
+                    </span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" data-route="page-home" class="text-sm font-medium transition-colors hover:text-white text-slate-400">Start</a>
+                    <a href="#" data-route="page-about" class="text-sm font-medium transition-colors hover:text-white text-slate-400">O mnie</a>
+                    <a href="#" data-route="page-contact" class="px-4 py-2 rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 hover:bg-indigo-500 hover:text-white transition-all text-sm font-medium">
+                        Napisz do mnie
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-400 hover:text-white p-2">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-slate-950/98 backdrop-blur-xl border-b border-white/10 transition-all duration-300 opacity-0 pointer-events-none -translate-y-4 shadow-2xl">
+            <div class="px-4 space-y-3 flex flex-col py-6">
+                <a href="#" data-route="page-home" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-colors">Start</a>
+                <a href="#" data-route="page-about" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-colors">O mnie</a>
+                <a href="#" data-route="page-contact" class="block px-4 py-3 text-center rounded-xl text-base font-medium text-white bg-indigo-500 hover:bg-indigo-400 shadow-lg shadow-indigo-500/20 transition-all">Napisz do mnie</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- GŁÓWNA ZAWARTOŚĆ -->
+    <main class="pt-16 flex-grow">
+
+        <!-- ===== STRONA: START ===== -->
+        <div id="page-home" class="page-section fade-in">
+            <section class="relative min-h-[90vh] flex flex-col justify-center items-center px-4 overflow-hidden pt-20 pb-32">
+                <div class="absolute inset-0 z-0">
+                    <div class="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-indigo-600/30 rounded-full blur-[120px] animate-pulse-glow"></div>
+                    <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-violet-600/20 rounded-full blur-[100px] animate-pulse-glow" style="animation-delay: 2s"></div>
+                </div>
+
+                <div class="relative z-10 max-w-4xl w-full text-center">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm animate-float">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-indigo-400"></i>
+                        <span class="text-sm text-slate-300">Robię fajne rzeczy w internecie</span>
+                    </div>
+                    
+                    <h1 class="text-5xl sm:text-7xl font-black tracking-tight mb-8 leading-[1.1]">
+                        Cześć, jestem <span class="bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">Kacper</span><br />
+                        <span class="text-slate-300">Zrobię Ci stronę</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+                        Zajmuję się tworzeniem stron internetowych. Korzystam z nowoczesnych technologii, dzięki którym Twoja strona będzie dopracowana w każdym najmniejszym detalu, zadziała błyskawicznie i zachwyci swoim wyglądem na każdym urządzeniu. Powiedz mi, czego potrzebujesz, a przygotuję dla Ciebie najlepsze rozwiązanie.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <button id="scroll-to-offers" class="group w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-indigo-500 text-white rounded-xl font-semibold hover:bg-indigo-400 transition-all shadow-xl shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-1">
+                            Zobacz ofertę <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        <a href="#" data-route="page-contact" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-white/10 text-slate-300 font-semibold hover:bg-white/5 transition-all hover:-translate-y-1 text-center">
+                            Napisz do mnie
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="oferta" class="py-24 bg-slate-900/50 border-y border-white/5 relative z-10">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl sm:text-5xl font-bold mb-6">Co dla Ciebie <span class="text-indigo-400">zbuduję?</span></h2>
+                        <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                            Wybierz pakiet, który najlepiej odpowiada Twoim potrzebom. Jeśli masz inne wymagania – przygotuję dla Ciebie rozwiązanie szyte na miarę.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Pakiet 1 -->
+                        <a href="#" data-offer="landing" class="group p-6 sm:p-8 rounded-3xl bg-slate-900/50 border border-white/5 hover:bg-slate-800/50 hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col">
+                            <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white mb-8 shadow-lg shadow-blue-500/20 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
+                                <i data-lucide="globe" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3 relative z-10">Prosta Strona (Landing)</h3>
+                            <p class="text-slate-400 mb-8 leading-relaxed relative z-10 text-sm flex-grow">
+                                Szybka, jedna strona. Idealna żeby pokazać produkt i zebrać kontakty.
+                            </p>
+                            <div class="flex items-center justify-between mt-auto relative z-10">
+                                <span class="text-sm font-bold text-indigo-400">ok. 999 PLN</span>
+                                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-indigo-500 text-slate-400 group-hover:text-white transition-all duration-300">
+                                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Pakiet 2 -->
+                        <a href="#" data-offer="business" class="group p-6 sm:p-8 rounded-3xl bg-slate-900/50 border border-white/5 hover:bg-slate-800/50 hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col">
+                            <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center text-white mb-8 shadow-lg shadow-violet-500/20 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
+                                <i data-lucide="code-2" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3 relative z-10">Strona dla Biznesu</h3>
+                            <p class="text-slate-400 mb-8 leading-relaxed relative z-10 text-sm flex-grow">
+                                Pełna wizytówka Twojej firmy, z podstronami i panelem do łatwej edycji.
+                            </p>
+                            <div class="flex items-center justify-between mt-auto relative z-10">
+                                <span class="text-sm font-bold text-indigo-400">ok. 2499 PLN</span>
+                                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-indigo-500 text-slate-400 group-hover:text-white transition-all duration-300">
+                                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Pakiet 3 -->
+                        <a href="#" data-offer="custom" class="group p-6 sm:p-8 rounded-3xl bg-slate-900/50 border border-white/5 hover:bg-slate-800/50 hover:border-indigo-500/30 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden flex flex-col">
+                            <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white mb-8 shadow-lg shadow-emerald-500/20 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 relative z-10">
+                                <i data-lucide="palette" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3 relative z-10">Coś Niestandardowego</h3>
+                            <p class="text-slate-400 mb-8 leading-relaxed relative z-10 text-sm flex-grow">
+                                Masz nietypowy pomysł? Świetnie. Porozmawiajmy i sprawdźmy, co możemy razem stworzyć.
+                            </p>
+                            <div class="flex items-center justify-between mt-auto relative z-10">
+                                <span class="text-sm font-bold text-indigo-400">Dogadamy się</span>
+                                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-indigo-500 text-slate-400 group-hover:text-white transition-all duration-300">
+                                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ===== STRONA: O MNIE ===== -->
+        <div id="page-about" class="page-section hidden">
+            <div class="min-h-[90vh] py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                <div class="max-w-7xl mx-auto relative z-10">
+                    <div class="text-center mb-20">
+                        <h1 class="text-4xl sm:text-6xl font-black tracking-tight mb-6">
+                            Kim <span class="text-indigo-400">jestem?</span>
+                        </h1>
+                        <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                            Twórca stron internetowych, z pasją budujący nowoczesne rozwiązania w sieci. Wykorzystuję najnowsze technologie, by Twoja strona była dopracowana w każdym najmniejszym detalu, działała błyskawicznie i wyróżniała się świetnym designem.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-16 items-center">
+                        <div class="space-y-6">
+                            <h2 class="text-3xl font-bold mb-8">Jak to u mnie wygląda?</h2>
+                            <p class="text-lg text-slate-400 leading-relaxed">
+                                Podchodzę do każdego zlecenia z ogromnym zaangażowaniem. Nie interesuje mnie masowe tworzenie – każdemu projektowi poświęcam maksymalną uwagę, dbając o jakość i estetykę, z których oboje będziemy dumni.
+                            </p>
+                            <p class="text-lg text-slate-400 leading-relaxed">
+                                Stawiam na jasną komunikację bez zbędnego żargonu technicznego. Wystarczy, że powiesz mi, jakiego rozwiązania potrzebujesz, a ja doradzę odpowiednie technologie i zajmę się całą resztą. Sprawnie, jasno i profesjonalnie.
+                            </p>
+                            
+                            <div class="flex items-center gap-2 mt-8 py-3 px-6 bg-indigo-500/10 border border-indigo-500/20 rounded-full text-indigo-400 font-semibold w-max shadow-[0_0_15px_rgba(99,102,241,0.2)]">
+                                <i data-lucide="check-circle" class="w-5 h-5"></i> 100% Zaangażowania
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-3xl blur-2xl opacity-50"></div>
+                            
+                            <div class="relative grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl border border-white/5 hover:border-white/10 transition-all hover:-translate-y-1">
+                                    <div class="text-indigo-400 mb-4"><i data-lucide="smartphone" class="w-8 h-8"></i></div>
+                                    <h3 class="text-lg font-bold text-white mb-2">Działa na tel</h3>
+                                    <p class="text-sm text-slate-400">Idealny układ na każdym ekranie</p>
+                                </div>
+                                <div class="bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl border border-white/5 hover:border-white/10 transition-all hover:-translate-y-1">
+                                    <div class="text-amber-400 mb-4"><i data-lucide="zap" class="w-8 h-8"></i></div>
+                                    <h3 class="text-lg font-bold text-white mb-2">Szybkość</h3>
+                                    <p class="text-sm text-slate-400">Ładuje się momentalnie</p>
+                                </div>
+                                <div class="bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl border border-white/5 hover:border-white/10 transition-all hover:-translate-y-1">
+                                    <div class="text-emerald-400 mb-4"><i data-lucide="palette" class="w-8 h-8"></i></div>
+                                    <h3 class="text-lg font-bold text-white mb-2">Wygląd</h3>
+                                    <p class="text-sm text-slate-400">Czysto i z pomysłem</p>
+                                </div>
+                                <div class="bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl border border-white/5 hover:border-white/10 transition-all hover:-translate-y-1">
+                                    <div class="text-rose-400 mb-4"><i data-lucide="heart-handshake" class="w-8 h-8"></i></div>
+                                    <h3 class="text-lg font-bold text-white mb-2">Wsparcie</h3>
+                                    <p class="text-sm text-slate-400">Wsparcie po zakończeniu prac</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== STRONA: KONTAKT ===== -->
+        <div id="page-contact" class="page-section hidden">
+            <div class="min-h-[90vh] py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+                <div class="absolute inset-0 bg-slate-900/50 -z-10"></div>
+                <div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[100px] -z-10"></div>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h1 class="text-4xl sm:text-6xl font-black tracking-tight mb-6">
+                            Napisz do <span class="text-indigo-400">mnie</span>
+                        </h1>
+                        <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+                            Masz pomysł na projekt, a może dopiero szukasz inspiracji? Jeśli potrzebujesz kogoś, kto stworzy Twoją stronę z użyciem nowoczesnych technologii, tak aby działała wydajnie i rzetelnie – skontaktuj się ze mną.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-5 gap-12">
+                        <div class="md:col-span-2 space-y-8">
+                            <div class="bg-slate-900/80 backdrop-blur-sm p-8 rounded-3xl border border-white/5 shadow-xl">
+                                <h3 class="text-2xl font-bold mb-6 text-white flex items-center gap-3">
+                                    <i data-lucide="message-square" class="w-6 h-6 text-indigo-400"></i>
+                                    Porozmawiajmy
+                                </h3>
+                                <p class="text-slate-400 mb-8 leading-relaxed">
+                                    Opisz krótko swój projekt. Odpowiadam najszybciej jak to możliwe. Omówimy wszystkie szczegóły jasno, profesjonalnie i w przyjaznej atmosferze.
+                                </p>
+                                <div class="space-y-6">
+                                    <a href="mailto:ksite@proton.me" class="flex items-center gap-4 text-slate-300 hover:text-indigo-400 transition-colors group">
+                                        <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-indigo-500/20 transition-colors">
+                                            <i data-lucide="mail" class="w-5 h-5"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-medium text-slate-500 mb-1">Napisz bezpośrednio</div>
+                                            <div class="font-semibold text-lg tracking-wide">ksite@proton.me</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-3">
+                            <form id="contact-form" class="bg-slate-900/80 backdrop-blur-sm p-8 rounded-3xl border border-white/5 shadow-xl relative overflow-hidden">
+                                <div class="space-y-6 relative z-10">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="block text-sm font-medium text-slate-400 mb-2">Jak masz na imię?</label>
+                                            <input type="text" name="name" required class="w-full px-5 py-4 rounded-xl bg-slate-950/50 border border-white/10 text-white focus:outline-none focus:border-indigo-500/50 focus:bg-slate-900 transition-all placeholder:text-slate-600" placeholder="np. Tomek" />
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm font-medium text-slate-400 mb-2">Gdzie mam odpisać?</label>
+                                            <input type="email" name="email" required class="w-full px-5 py-4 rounded-xl bg-slate-950/50 border border-white/10 text-white focus:outline-none focus:border-indigo-500/50 focus:bg-slate-900 transition-all placeholder:text-slate-600" placeholder="twoj@mail.com" />
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-medium text-slate-400 mb-2">Wybierz temat / pakiet</label>
+                                        <select name="package" class="w-full px-5 py-4 rounded-xl bg-slate-950/50 border border-white/10 text-white focus:outline-none focus:border-indigo-500/50 focus:bg-slate-900 transition-all appearance-none cursor-pointer">
+                                            <option value="">Po prostu chcę o coś zapytać</option>
+                                            <option value="Prosta Strona (Landing)">Prosta Strona (Landing) - ok. 999 PLN</option>
+                                            <option value="Strona dla Biznesu">Strona dla Biznesu - ok. 2499 PLN</option>
+                                            <option value="Coś Niestandardowego">Coś Niestandardowego - Dogadamy się</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-sm font-medium text-slate-400 mb-2">O czym chcesz porozmawiać?</label>
+                                        <textarea name="message" required rows="5" class="w-full px-5 py-4 rounded-xl bg-slate-950/50 border border-white/10 text-white focus:outline-none focus:border-indigo-500/50 focus:bg-slate-900 transition-all resize-none placeholder:text-slate-600" placeholder="Opisz krótko, jakiego projektu potrzebujesz..."></textarea>
+                                    </div>
+
+                                    <button type="submit" class="w-full py-4 px-6 rounded-xl bg-indigo-500 text-white font-semibold hover:bg-indigo-400 transition-all flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed">
+                                        Wyślij wiadomość <i data-lucide="send" class="w-5 h-5 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform"></i>
+                                    </button>
+                                    
+                                    <div id="contact-status"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== STRONA: SZCZEGÓŁY OFERTY ===== -->
+        <div id="page-offer" class="page-section hidden">
+            <div class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-[90vh]">
+                <a href="#" data-route="page-home" class="inline-flex items-center gap-2 text-slate-400 hover:text-white mb-12 transition-colors group">
+                    <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i>
+                    Wróć na główną
+                </a>
+
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <div>
+                        <div id="od-icon-container" class="inline-flex items-center justify-center p-4 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 mb-8 border border-white/10 shadow-2xl">
+                            <!-- Icon goes here dynamically -->
+                        </div>
+                        <h1 id="od-title" class="text-4xl sm:text-5xl font-black mb-4">Tytuł Oferty</h1>
+                        
+                        <div class="flex flex-wrap items-center gap-4 mb-8">
+                            <span id="od-price" class="text-2xl font-bold text-indigo-400">ok. 0 PLN</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
+                            <span id="od-timeline" class="text-slate-400 font-medium">Czas realizacji: brak</span>
+                        </div>
+
+                        <p id="od-desc" class="text-lg text-slate-400 mb-12 leading-relaxed">
+                            Opis oferty...
+                        </p>
+
+                        <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="text-indigo-400 w-6 h-6"></i> Co dostajesz w pakiecie?
+                        </h3>
+                        
+                        <ul id="od-features" class="space-y-4">
+                            <!-- Dynamically populated -->
+                        </ul>
+                    </div>
+
+                    <div class="lg:pl-8">
+                        <div class="bg-slate-900/80 p-8 rounded-3xl border border-white/10 shadow-2xl sticky top-24 backdrop-blur-sm relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-[80px] -z-10 pointer-events-none"></div>
+                            
+                            <h3 class="text-2xl font-bold mb-2">Myślisz o <span id="od-form-title" class="text-indigo-400">pakiecie</span>?</h3>
+                            <p class="text-slate-400 mb-8 text-sm">Zostaw swój adres e-mail i opisz krótko swój projekt. Odezwę się najszybciej jak to możliwe i omówimy szczegóły.</p>
+                            
+                            <form id="offer-form" class="space-y-5">
+                                <input type="hidden" id="od-package" name="package" value="">
+                                
+                                <div>
+                                    <input type="text" name="name" required class="w-full px-5 py-4 rounded-xl bg-slate-950/80 border border-white/10 text-white focus:outline-none focus:border-indigo-500/50 transition-colors placeholder:text-slate-600" placeholder="Jak masz na imię?" />
+                                </div>
+                                <div>
+                                    <input type="email" name="email" required class="w-full px-5 py-4 rounded-xl bg-slate-950/80 border border-white/10 text-white focus:outline-none focus:border-indigo-500/50 transition-colors placeholder:text-slate-600" placeholder="Gdzie mam Ci odpisać? (email)" />
+                                </div>
+                                <div>
+                                    <textarea name="message" required rows="4" class="w-full px-5 py-4 rounded-xl bg-slate-950/80 border border-white/10 text-white focus:outline-none focus:border-indigo-500/50 transition-colors resize-none placeholder:text-slate-600" placeholder="Opisz krótko swój projekt..."></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full py-4 px-6 rounded-xl bg-indigo-500 text-white font-semibold hover:bg-indigo-400 transition-all flex items-center justify-center gap-2 group shadow-xl shadow-indigo-500/20 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed">
+                                    Wyślij wiadomość <i data-lucide="send" class="w-5 h-5 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+                                
+                                <div id="offer-status"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- STOPKA -->
+    <footer class="bg-slate-950 border-t border-white/5 py-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center justify-center">
+                <div class="flex items-center gap-2 mb-4 opacity-50">
+                    <span class="font-mono font-bold text-white">&lt;/&gt;</span>
+                    <span class="font-bold text-white tracking-tight">KSite</span>
+                </div>
+                <p class="text-slate-500 text-sm text-center mb-6 max-w-sm">
+                    Buduję superszybkie strony oparte o najnowsze technologie. Czysty kod, dopracowany design.
+                </p>
+                <div class="text-sm text-slate-400 flex items-center gap-2">
+                    Napisz: <a href="mailto:ksite@proton.me" class="text-indigo-400 hover:text-indigo-300 transition-colors">ksite@proton.me</a>
+                </div>
+                <div class="mt-8 text-xs text-slate-600">
+                    © <span id="current-year">2024</span> KSite. Wszelkie prawa zastrzeżone.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
