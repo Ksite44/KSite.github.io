@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Logowania - KSite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-50 flex items-center justify-center min-h-screen font-sans">
+    <div class="bg-slate-900 p-8 sm:p-12 rounded-3xl border border-slate-800 shadow-2xl max-w-md w-full text-center relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-violet-600/20 rounded-full blur-[50px] pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-32 h-32 bg-indigo-600/20 rounded-full blur-[50px] pointer-events-none"></div>
+        
+        <h1 class="text-3xl font-bold mb-2 relative z-10">Panel Administracyjny</h1>
+        <p class="text-slate-400 mb-8 text-sm relative z-10">Zaloguj się, aby edytować treści, ceny i opisy na swojej stronie.</p>
+        
+        <div class="relative z-10 space-y-4">
+            <input type="password" id="password" placeholder="Wprowadź hasło..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all text-center tracking-widest text-lg">
+            
+            <p id="error-msg" class="text-rose-400 text-sm hidden font-medium">Nieprawidłowe hasło!</p>
+            
+            <button onclick="login()" class="w-full bg-violet-600 hover:bg-violet-500 text-white font-semibold py-4 rounded-xl transition-all shadow-lg shadow-violet-500/20 mt-2">
+                Zaloguj się
+            </button>
+        </div>
+        
+        <a href="../index.html" class="inline-block mt-8 text-sm text-slate-500 hover:text-slate-300 transition-colors relative z-10">
+            &larr; Wróć do strony głównej
+        </a>
+    </div>
+
+    <script>
+        function login() {
+            const pass = document.getElementById('password').value;
+            if (pass === 'maslo123') {
+                sessionStorage.setItem('ksite_admin', 'true');
+                window.location.href = '../index.html';
+            } else {
+                document.getElementById('error-msg').classList.remove('hidden');
+                document.getElementById('password').classList.add('border-rose-500');
+            }
+        }
+
+        document.getElementById('password').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') login();
+        });
+    </script>
+</body>
+</html>
